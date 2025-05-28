@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -11,6 +8,37 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+  },
+  webpack: (config, { isServer }) => {
+    // Handle undici/cheerio compatibility issues
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+        crypto: false,
+        stream: false,
+        url: false,
+        zlib: false,
+        http: false,
+        https: false,
+        assert: false,
+        os: false,
+        path: false,
+      }
+    }
+
+    // Exclude problematic modules from client-side bundling
+    config.externals = config.externals || []
+    if (!isServer) {
+      config.externals.push({
+        undici: "undici",
+        cheerio: "cheerio",
+      })
+    }
+
+    return config
   },
   async headers() {
     return [
