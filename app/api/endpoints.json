@@ -1,0 +1,54 @@
+{
+  "ai": [
+    {
+      "name": "Deepseek AI",
+      "desc": "Advanced AI chat using Deepseek model",
+      "status": "Active",
+      "path": "/api/ai/deepseek?apikey=&text="
+    },
+    {
+      "name": "Gemini AI",
+      "desc": "Google Gemini AI chat assistant",
+      "status": "Active",
+      "path": "/api/ai/gemini?apikey=&text="
+    }
+  ],
+  "download": [
+    {
+      "name": "TikTok Downloader",
+      "desc": "Download TikTok videos without watermark",
+      "status": "Active",
+      "path": "/api/download/tiktok?apikey=&url="
+    },
+    {
+      "name": "YouTube MP4",
+      "desc": "Download YouTube videos in MP4 format",
+      "status": "Active",
+      "path": "/api/download/youtube?apikey=&url="
+    }
+  ],
+  "search": [
+    {
+      "name": "YouTube Search",
+      "desc": "Search YouTube videos and channels",
+      "status": "Active",
+      "path": "/api/search/youtube?apikey=&q="
+    }
+  ],
+  "tools": [
+    {
+      "name": "Website Screenshot",
+      "desc": "Take screenshot of any website",
+      "status": "Active",
+      "path": "/api/tools/ssweb?apikey=&url="
+    }
+  ],
+  "random": [
+    {
+      "name": "Random Waifu",
+      "desc": "Get random anime waifu images",
+      "status": "Active",
+      "path": "/api/random/waifu?apikey="
+    }
+  ]
+}
